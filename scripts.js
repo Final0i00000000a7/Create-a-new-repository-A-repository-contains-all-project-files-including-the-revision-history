@@ -15,7 +15,7 @@ function update() {
   if (!E(xValue.value).isneg() || !E(xValue.value).isNaN()) x = E(xValue.value)
   const a = getUndulatingColor()
   const displays = document.getElementById('displays')
-  displays.innerHTML = 'GDP = 10<sup>x<sup>1.2</sup>/25</sup> = '+colorText('h3',a,format(GDP))+`元，下次评论后`+colorText('h3',a,'×'+format(nextGDP.div(GDP)))
+  displays.innerHTML = 'GDP = 10<sup>x<sup>1.2</sup>/20</sup> = '+colorText('h3',a,format(GDP))+`元，下次评论后`+colorText('h3',a,'×'+format(nextGDP.div(GDP)))+'<br>增长率：10<sup>x<sup>1.2'
 }
 function convertToB16(n) {
   let codes = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']

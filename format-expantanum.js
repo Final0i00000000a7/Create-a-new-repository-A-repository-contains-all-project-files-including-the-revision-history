@@ -155,9 +155,7 @@ function format(num, precision=4, small=false) {
         }else {
           p = precision2-Math.log10(bottom)+3
         }
-        if (p<0) {
-          p = 0
-        }
+        p = Math.round(Math.max(p,0))
         return "e".repeat(rep) + regularFormat(m, p) + "e" + commaFormat(e)
     }
     else if (num.lt("10^^1000000")) { // 1F5 ~ F1,000,000
