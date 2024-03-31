@@ -1,1 +1,24 @@
-
+<!DOCTYPE html>  
+<html lang="zh">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDP计算器</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="ExpantaNum.js"></script>
+    <script src="format-expantanum.js"></script>
+    <script src="scripts.js"></script>
+</head>  
+<body>
+  <div id="version">v0.2</div>
+  <h1>GDP计算器</h1>
+  <label for="xValue">修改x值：</label>
+  <input type="text" id="xValue" value="509"><br>
+  <label for="formulaToX">以ExpantaNum公式修改x值：</label>
+  <input type="text" id="formulaToX" value="" onchange="evaluateExpression(this.value)">
+  <div id="displays"></div>
+  <div>当前页面地址：<a href="https://final0i00000000a7.github.io/Create-a-new-repository-A-repository-contains-all-project-files-including-the-revision-history/" target="_blank">https://final0i00000000a7.github.io/Create-a-new-repository-A-repository-contains-all-project-files-including-the-revision-history/</a><br>另外，本计算器还使用了<br><a href="https://github.com/Naruyoko/ExpantaNum.js" target="_blank">ExpantaNum.js</a><br>
+        <a href="https://github.com/cloudytheconqueror/letter-notation-format/" target="_blank">format-expantanum.js</a><br>
+        来处理大数字</div>
+</body>
+</html>
