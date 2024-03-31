@@ -1,8 +1,10 @@
 function getGDP(num) {
   num = E(num)
-  y = E(10).pow(num.pow(1.2).div(20))
+  t = num.sub(946).log10().add(1)
+  y = E(10).pow(E(946).add(num.sub(946).mul(t)).pow(1.2).div(15))
   z = {
     y: y,
+    t: t,
   }
   return z
 }
@@ -12,10 +14,10 @@ function update() {
   window.t = getGDP(window.x).t
   window.nextGDP = getGDP(window.x.add(1)).y
   const xValue = document.getElementById('xValue');
-  if (!E(xValue.value).isneg() || !E(xValue.value).isNaN()) x = E(xValue.value)
+  if (!E(xValue.value).isneg() || !E(xValue.value).isNaN()) x = E(xValue.value).add(10)
   const a = getUndulatingColor()
   const displays = document.getElementById('displays')
-  displays.innerHTML = 'GDP = 10<sup>x<sup>1.2</sup>/20</sup> = '+colorText('h3',a,format(GDP))+`元，下次评论后`+colorText('h3',a,'×'+format(nextGDP.div(GDP)))+'<br>增长率：10<sup>x<sup>1.2'
+  displays.innerHTML = 'x = '+colorText('h3',a,formatWhole(x))+'<br>GDP = 10<sup>x<sup>1.2</sup>/20</sup> = '+colorText('h3',a,format(GDP))+`元，下次评论后`+colorText('h3',a,'×'+format(nextGDP.div(GDP)))+'<br>t = log<sub>10</sub>(x)+1 = '+colorText('h3',a,'×'+format(nextGDP.div(t)))+'<br>增长率：10<sup>x<sup>1.2'
 }
 function convertToB16(n) {
   let codes = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
