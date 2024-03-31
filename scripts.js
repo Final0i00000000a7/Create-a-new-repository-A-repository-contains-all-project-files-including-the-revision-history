@@ -1,10 +1,8 @@
 function getGDP(num) {
   num = E(num)
-  t = num.sub(299).log10().add(1)
-  y = E(1.03).add(t.mul(num.sub(299)).div(1e4)).pow(E(300).add(t.mul(num.sub(299))))
+  y = E(10).pow(num.pow(1.2).div(20))
   z = {
     y: y,
-    t: t,
   }
   return z
 }
@@ -17,7 +15,7 @@ function update() {
   if (!E(xValue.value).isneg() || !E(xValue.value).isNaN()) x = E(xValue.value)
   const a = getUndulatingColor()
   const displays = document.getElementById('displays')
-  displays.innerHTML = 'GDP = (1.03+t(x-299)/10000)<sup>(300+t(x-299))</sup> = '+colorText('h3',a,format(GDP))+`元，下次评论后`+colorText('h3',a,'×'+format(nextGDP.div(GDP)))+'<br>t = log<sub>10</sub>(x-299)+1 = '+colorText('h3',a,format(t))
+  displays.innerHTML = 'GDP = 10<sup>x<sup>1.2</sup>/25</sup> = '+colorText('h3',a,format(GDP))+`元，下次评论后`+colorText('h3',a,'×'+format(nextGDP.div(GDP)))
 }
 function convertToB16(n) {
   let codes = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
